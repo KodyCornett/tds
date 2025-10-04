@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4aa8h6y737r3"]
+
+[ext_resource type="Texture2D" uid="uid://cl5g5ov08c5jv" path="res://Content/Assets/Tilesets/Ground/Rocks.png" id="1_v3srh"]
+
+[sub_resource type="GDScript" id="GDScript_v3srh"]
+script/source = "extends StaticBody2D
+
+
+@export var rock_name: String = \"Stone\"
+@export var max_health: int = 5
+@export var drops: Array[String] = [\"stone\"]
+
+var health: int
+
+@onready var sprite: Sprite2D = $RockSprite2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
+func _ready() -> void:
+	health = max_health
+	add_to_group(\"rocks\")
+
+func take_damage(amount: int) -> void:
+	print(\"[Rock] take_damage called! Amount:\", amount, \"Health before:\", health)
+	health -= amount
+	print(\"[Rock] Health now:\", health)
+	flash_hit()
+
+	if health <= 0:
+		break_rock()
+
+func flash_hit() -> void:
+	if not sprite: return
+	sprite.modulate = Color(1, 0.5, 0.5)  # reddish tint
+	await get_tree().create_timer(0.1).timeout
+	sprite.modulate = Color(1, 1, 1)      # reset to normal   
+
+func break_rock() -> void:
+	print(\"%s has been mined!\" % rock_name)
+	for drop in drops:
+		if ItemDatabase.ITEMS.has(drop):
+			Inventory.add_item(drop, 1)
+			print(\"Dropped:\", drop)
+		else:
+			push_warning(\"Unknown drop id: %s\" % drop)
+
+	# Hide & disable collisions
+	sprite.hide()
+	collision.set_deferred(\"disabled\", true)
+	queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghf7l"]
+atlas = ExtResource("1_v3srh")
+region = Rect2(0, 17, 32, 45)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7flr"]
+radius = 13.0
+height = 46.0
+
+[node name="Rock" type="StaticBody2D" groups=["rocks"]]
+script = SubResource("GDScript_v3srh")
+
+[node name="RockSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = SubResource("AtlasTexture_ghf7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("CapsuleShape2D_l7flr")

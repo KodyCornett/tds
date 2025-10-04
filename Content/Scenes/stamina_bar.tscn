@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cstsgrnpdp8jh"]
+
+[ext_resource type="Script" uid="uid://ux82d3y6ly3n" path="res://Content/Scripts/stamina.gd" id="1_yfcrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26qne"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.777931, 0.856525, 3.85046e-07, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfcrh"]
+bg_color = Color(0.733333, 0.576471, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.776471, 0.854902, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="StaminaBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfcrh")
+stat_name = "stamina"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 6)
+layout_mode = 1
+offset_right = 150.0
+offset_bottom = 25.0
+theme_override_styles/background = SubResource("StyleBoxFlat_26qne")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yfcrh")
+fill_mode = 1

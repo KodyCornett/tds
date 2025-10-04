@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0pe5my4xtvt"]
+
+[ext_resource type="Script" uid="uid://ux82d3y6ly3n" path="res://Content/Scripts/stamina.gd" id="2_r6poe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igjyb"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.749878, 0, 0.125008, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6poe"]
+bg_color = Color(0.817949, 6.79366e-05, 0.140978, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.74902, 0, 0.12549, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Healthbar" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("2_r6poe")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 6)
+layout_mode = 1
+offset_right = 150.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_igjyb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r6poe")
+fill_mode = 1

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://o6ta0l7ubawf"]
+
+[ext_resource type="PackedScene" uid="uid://g0pe5my4xtvt" path="res://Content/Scenes/healthbar.tscn" id="1_lfccx"]
+[ext_resource type="PackedScene" uid="uid://pg8dwjlucqnd" path="res://Content/Scenes/stamina.tscn" id="2_lfccx"]
+[ext_resource type="PackedScene" uid="uid://bxe1i776ceswx" path="res://Content/Scenes/energy_bar.tscn" id="3_rlq4n"]
+[ext_resource type="PackedScene" uid="uid://cogyysw4j0owr" path="res://Content/Scenes/thirst_bar.tscn" id="4_phji5"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Healthbar" parent="." instance=ExtResource("1_lfccx")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 76.0
+offset_top = -74.0
+offset_right = 76.0
+offset_bottom = -74.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(4, 4)
+
+[node name="stamina" parent="." instance=ExtResource("2_lfccx")]
+position = Vector2(279, 594)
+
+[node name="EnergyBar" parent="." instance=ExtResource("3_rlq4n")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 77.0
+offset_top = -39.0
+offset_right = 77.0
+offset_bottom = -39.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(4, 4)
+
+[node name="ThirstBar" parent="." instance=ExtResource("4_phji5")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 208.0
+offset_top = -35.0
+offset_right = 208.0
+offset_bottom = -35.0
+grow_horizontal = 1
+grow_vertical = 0
+scale = Vector2(4, 4)
