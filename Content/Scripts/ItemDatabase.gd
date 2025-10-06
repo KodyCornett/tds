@@ -20,7 +20,13 @@ var ITEMS := {
 	"stone": {
 		"display_name": "Stone",
 		"max_stack": 10
-	}
+	},
+	
+	"Indigo Milk Cap": {
+		"display_name": "Milk Cap",
+		"max_stack": 10
+	},
+	
 	
 }
 
