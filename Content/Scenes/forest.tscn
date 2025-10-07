@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=94 format=4 uid="uid://cktct5rrfahgf"]
+=======
+[gd_scene load_steps=86 format=4 uid="uid://cktct5rrfahgf"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dgt40dtxpgr5e" path="res://Content/Assets/Tilesets/Ground/Water_tiles.png" id="1_1a67b"]
 [ext_resource type="Texture2D" uid="uid://d07w556hv5xob" path="res://Content/Assets/Tilesets/Ground/Floors_Tiles.png" id="2_nfp8y"]
@@ -30,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://5axtc1co2ovv" path="res://Content/Scenes/TreeScenes/tree.tscn" id="25_588h7"]
 [ext_resource type="PackedScene" uid="uid://0klgxvyowhxe" path="res://Content/Scenes/TreeScenes/tree1.tscn" id="25_j201c"]
 [ext_resource type="PackedScene" uid="uid://br6ydj300yqhi" path="res://Content/Scenes/ore.tscn" id="25_jjv0t"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://fw5vli2tptyd" path="res://Content/Scenes/HerbScenes/herb.tscn" id="26_54tir"]
 [ext_resource type="PackedScene" uid="uid://c3s1etakoch01" path="res://Content/Scenes/TreeScenes/Mtree5.tscn" id="27_w50jo"]
 [ext_resource type="PackedScene" uid="uid://1ka6o0dcpy4e" path="res://Content/Scenes/TreeScenes/Mtree4.tscn" id="28_6hc28"]
@@ -39,6 +44,10 @@
 [ext_resource type="PackedScene" uid="uid://n0gytaxak0t" path="res://Content/Scenes/TreeScenes/Mtree1.tscn" id="31_gtqpy"]
 [ext_resource type="PackedScene" uid="uid://by2jixcxu4hll" path="res://Content/Scenes/TreeScenes/Mtree.tscn" id="32_4n4fq"]
 [ext_resource type="PackedScene" uid="uid://c2my3n2b7kapy" path="res://Content/Scenes/TreeScenes/Ltree.tscn" id="32_6hc28"]
+=======
+[ext_resource type="PackedScene" uid="uid://fw5vli2tptyd" path="res://Content/Scenes/herb.tscn" id="26_54tir"]
+[ext_resource type="PackedScene" uid="uid://cd0fmnw2oonbv" path="res://Content/Scripts/Mobs/ooze.tscn" id="31_w3glr"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_011ga"]
 texture = ExtResource("1_1a67b")
@@ -3845,7 +3854,7 @@ tile_map_data = PackedByteArray("AABwAFIAAQACAAIAAABxAFMAAQACAAIAAABxAFIAAQACAAI
 tile_set = SubResource("TileSet_0xbf2")
 
 [node name="Herb" parent="MapLayers" instance=ExtResource("26_54tir")]
-position = Vector2(76, -48)
+position = Vector2(123, 59)
 
 [node name="Player" parent="MapLayers" instance=ExtResource("20_2pdt8")]
 position = Vector2(-1, -15)
@@ -3874,7 +3883,7 @@ position = Vector2(-57, 39)
 position = Vector2(-18, 75)
 
 [node name="Tree5" parent="MapLayers/Tree1/Node2D" instance=ExtResource("24_jjv0t")]
-position = Vector2(119, 28)
+position = Vector2(140, 24)
 
 [node name="Tree6" parent="MapLayers/Tree1/Node2D" instance=ExtResource("32_4n4fq")]
 position = Vector2(210, -1)
@@ -3912,3 +3921,6 @@ tile_set = SubResource("TileSet_588h7")
 position = Vector2(55, 34)
 
 [node name="HUD" parent="." instance=ExtResource("24_rb5wc")]
+
+[node name="Ooze" parent="." instance=ExtResource("31_w3glr")]
+position = Vector2(82, -9)
