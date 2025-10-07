@@ -22,13 +22,14 @@ func _on_body_exited(body: Node) -> void:
 		player_in_range = false
 
 func collect() -> void:
-	if harvested: return
+	if harvested: 
+		return
 	harvest()
 
 func harvest() -> void:
-	print("[BaseHerb] Harvested:", herb_name, "| Amount gained:", harvest_amount)
+	print("[BaseHerb] Collected:", herb_name, "| Amount:", harvest_amount)
 	Inventory.add_item(herb_name, harvest_amount)
 
-	# Herb disappears
+	# Object disappears
 	queue_free()
 	harvested = true

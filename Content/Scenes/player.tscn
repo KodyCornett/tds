@@ -1143,13 +1143,13 @@ animations = [{
 size = Vector2(12, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dpw3e"]
-radius = 35.0
+radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q77ns"]
-radius = 7.0
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_35asv"]
-radius = 6.08276
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
