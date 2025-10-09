@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*res://Content/Scripts/PlayerStats.gd"
-ItemDatabase="*res://Content/Scripts/ItemDatabase.gd"
-Inventory="*res://Content/Scripts/Inventory.gd"
+ItemDatabase="*res://Content/Scripts/Singletons/ItemDatabase.gd"
+Inventory="*res://Content/Scripts/Singletons/Inventory.gd"
 
 [global_group]
 

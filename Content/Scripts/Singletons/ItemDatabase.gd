@@ -9,14 +9,17 @@ var ITEMS := {
 		"display_name": "Wood",
 		"max_stack": 99
 	},
+	
 	"herb_green": {
 		"display_name": "Herb",
 		"max_stack": 20
 	},
+	
 	"flint": {
 		"display_name": "Flint",
 		"max_stack": 10
 	},
+	
 	"stone": {
 		"display_name": "Stone",
 		"max_stack": 10
@@ -26,6 +29,11 @@ var ITEMS := {
 		"display_name": "Milk Cap",
 		"max_stack": 10
 	},
+	
+	"Copper": {
+		"display_name": "Copper",
+		"max_stack": 10
+	}
 	
 	
 }
