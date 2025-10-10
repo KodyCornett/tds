@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxpjtrbqcjdo1"]
 
-[ext_resource type="Script" uid="uid://6rxy2lp0np5a" path="res://Content/Scripts/SmallTree.gd" id="1_4c8sr"]
+[ext_resource type="Script" uid="uid://6rxy2lp0np5a" path="res://Content/Scripts/Resources/SmallTree.gd" id="1_4c8sr"]
 [ext_resource type="Texture2D" uid="uid://cdt0bilk0uu7g" path="res://Content/Assets/Tilesets/Trees/Model_01/Size_02.png" id="3_8rvd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8472q"]

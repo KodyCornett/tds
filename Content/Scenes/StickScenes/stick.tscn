@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://tyemmenwue0b"]
+[gd_scene load_steps=5 format=3 uid="uid://bnl4uxa1n71dh"]
 
-[ext_resource type="Script" uid="uid://chxyo07usayv0" path="res://Content/Scripts/Resources/Mushroom.gd" id="1_tjqeo"]
-[ext_resource type="Texture2D" uid="uid://oc3m0jsxba1d" path="res://Content/Assets/Tilesets/Ground/Vegetation.png" id="2_cc707"]
+[ext_resource type="Script" uid="uid://chxyo07usayv0" path="res://Content/Scripts/Resources/Mushroom.gd" id="1_wposh"]
+[ext_resource type="Texture2D" uid="uid://oc3m0jsxba1d" path="res://Content/Assets/Tilesets/Ground/Vegetation.png" id="2_p2bs5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgb60"]
-atlas = ExtResource("2_cc707")
-region = Rect2(48, 335, 16, 16)
+atlas = ExtResource("2_p2bs5")
+region = Rect2(240, 0, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq00y"]
 radius = 11.0
 
 [node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
-script = ExtResource("1_tjqeo")
-herb_name = "Porcinni"
+script = ExtResource("1_wposh")
+herb_name = "Stick"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_mgb60")

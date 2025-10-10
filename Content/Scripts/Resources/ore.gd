@@ -2,9 +2,7 @@ extends StaticBody2D
 class_name Ore
 
 @export var health: float = 5.0
-@export var loot_table: Dictionary = {
-	"stone": 1
-}
+@export var loot_table: Dictionary
 
 @onready var ore_sprite: Sprite2D = $OreSprite2D
 

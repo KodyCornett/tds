@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="TDS"
-run/main_scene="uid://cktct5rrfahgf"
+run/main_scene="uid://ccd0hhyto43l1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PlayerStats="*res://Content/Scripts/PlayerStats.gd"
-ItemDatabase="*res://Content/Scripts/ItemDatabase.gd"
-Inventory="*res://Content/Scripts/Inventory.gd"
+ItemDatabase="*res://Content/Scripts/Singletons/ItemDatabase.gd"
+Inventory="*res://Content/Scripts/Singletons/Inventory.gd"
 
 [global_group]
 
