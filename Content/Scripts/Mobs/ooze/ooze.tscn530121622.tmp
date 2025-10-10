@@ -170,6 +170,8 @@ radius = 5.0
 
 [node name="Ooze" type="CharacterBody2D"]
 script = ExtResource("1_ori52")
+speed = null
+wander_speed = null
 
 [node name="Detection" type="Area2D" parent="."]
 

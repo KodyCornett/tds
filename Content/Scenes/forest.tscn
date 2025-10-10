@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://cktct5rrfahgf"]
+[gd_scene load_steps=87 format=4 uid="uid://cktct5rrfahgf"]
 
 [ext_resource type="Texture2D" uid="uid://dgt40dtxpgr5e" path="res://Content/Assets/Tilesets/Ground/Water_tiles.png" id="1_1a67b"]
 [ext_resource type="Texture2D" uid="uid://d07w556hv5xob" path="res://Content/Assets/Tilesets/Ground/Floors_Tiles.png" id="2_nfp8y"]
@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://d0rmmf21oqdkd" path="res://Content/Scenes/TreeScenes/tree3.tscn" id="30_0sjab"]
 [ext_resource type="PackedScene" uid="uid://deepe4s6mbbn1" path="res://Content/Scenes/HerbScenes/Bmushroom.tscn" id="30_w3glr"]
 [ext_resource type="PackedScene" uid="uid://0klgxvyowhxe" path="res://Content/Scenes/TreeScenes/tree1.tscn" id="31_gtqpy"]
-[ext_resource type="PackedScene" uid="uid://cd0fmnw2oonbv" path="res://Content/Scripts/Mobs/ooze/ooze.tscn" id="31_w3glr"]
 [ext_resource type="PackedScene" uid="uid://5axtc1co2ovv" path="res://Content/Scenes/TreeScenes/tree.tscn" id="32_4n4fq"]
 [ext_resource type="PackedScene" uid="uid://1g72fbx4fmqy" path="res://Content/Scenes/TreeScenes/tree4.tscn" id="32_6hc28"]
 
@@ -3906,12 +3905,3 @@ tile_set = SubResource("TileSet_588h7")
 position = Vector2(55, 34)
 
 [node name="HUD" parent="." instance=ExtResource("24_rb5wc")]
-
-[node name="Ooze" parent="." instance=ExtResource("31_w3glr")]
-position = Vector2(82, -9)
-
-[node name="Ooze2" parent="." instance=ExtResource("31_w3glr")]
-position = Vector2(-197, -46)
-
-[node name="Ooze3" parent="." instance=ExtResource("31_w3glr")]
-position = Vector2(-49, 114)
