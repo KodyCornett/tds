@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfiqqfrml3fm8"]
+
+[ext_resource type="Script" uid="uid://bvacdwkdct8yd" path="res://AI/BaseAI.gd" id="1_h71xj"]
+[ext_resource type="Script" uid="uid://dn8e38jcfoakw" path="res://Content/Scripts/fsm.gd" id="2_s8lw7"]
+
+[node name="BaseAI" type="CharacterBody2D"]
+script = ExtResource("1_h71xj")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("2_s8lw7")

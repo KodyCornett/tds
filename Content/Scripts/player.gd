@@ -91,7 +91,11 @@ func _update_attack_shapes() -> void:
 
 func play_move() -> void:
 	if is_chopping or is_collecting or is_mining: return
-	anim.play("run_%s" % facing) if is_running else anim.play("walk_%s" % facing)
+	
+	if is_running:
+		anim.play("run_%s" % facing) 
+	else:
+		anim.play("walk_%s" % facing)
 
 # --- Chop ---
 func start_chop() -> void:

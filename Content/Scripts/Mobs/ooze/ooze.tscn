@@ -1,13 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://cd0fmnw2oonbv"]
+[gd_scene load_steps=27 format=3 uid="uid://cd0fmnw2oonbv"]
 
-[ext_resource type="Script" uid="uid://cmll875dnukpd" path="res://ooze.gd" id="1_ori52"]
-[ext_resource type="Script" uid="uid://c7d8cn7yt81i5" path="res://combat.gd" id="2_stpvs"]
-[ext_resource type="Script" uid="uid://jf2e1affp6rh" path="res://perception.gd" id="3_7jvq0"]
-[ext_resource type="Script" uid="uid://7eq61ia1rvdk" path="res://memory.gd" id="4_t7loa"]
-[ext_resource type="Script" uid="uid://djo3yl62m3v4l" path="res://emotion.gd" id="5_ldqb5"]
-[ext_resource type="Script" uid="uid://c0u5n6x66n5gv" path="res://planner.gd" id="6_unsrs"]
-[ext_resource type="Script" uid="uid://pxaq5csdayhy" path="res://arbitrator.gd" id="7_e75x1"]
+[ext_resource type="Script" uid="uid://cmll875dnukpd" path="res://Content/Scripts/Mobs/ooze/ooze.gd" id="1_ori52"]
 [ext_resource type="Texture2D" uid="uid://bvf1dvi6cr2q8" path="res://Content/Assets/Enemies/Slime_Green.png" id="8_7jvq0"]
+[ext_resource type="Script" uid="uid://dn8e38jcfoakw" path="res://Content/Scripts/fsm.gd" id="9_t7loa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jvq0"]
 radius = 77.05842
@@ -167,7 +162,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dojs"]
@@ -175,39 +170,24 @@ radius = 5.0
 
 [node name="Ooze" type="CharacterBody2D"]
 script = ExtResource("1_ori52")
+speed = null
+wander_speed = null
 
 [node name="Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_7jvq0")
 
-[node name="Perception" type="Node" parent="."]
-script = ExtResource("3_7jvq0")
-
-[node name="Memory" type="Node" parent="."]
-script = ExtResource("4_t7loa")
-
-[node name="Emotion" type="Node" parent="."]
-script = ExtResource("5_ldqb5")
-
-[node name="Planner" type="Node" parent="."]
-script = ExtResource("6_unsrs")
-
-[node name="Arbitrator" type="Node" parent="."]
-script = ExtResource("7_e75x1")
-
-[node name="Combat" type="Node" parent="."]
-script = ExtResource("2_stpvs")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.009742e-28, -1.9073486e-06)
 scale = Vector2(0.59033215, 0.63720703)
 sprite_frames = SubResource("SpriteFrames_30hcm")
-animation = &"death"
+animation = &"move"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1dojs")
 debug_color = Color(0.87794036, 0.32766825, 0.26240352, 0.41960785)
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("9_t7loa")
