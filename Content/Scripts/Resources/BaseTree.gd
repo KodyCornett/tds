@@ -3,6 +3,8 @@ class_name BaseTree
 
 @export var health: float = 25
 @export var wood_drop: int = 3
+@export var item_id: String
+
 
 @onready var tree_sprite: Sprite2D = $TreeSprite2D
 @onready var stump_sprite: Sprite2D = $StumpSprite2D

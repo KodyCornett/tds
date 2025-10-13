@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://cktct5rrfahgf"]
+[gd_scene load_steps=96 format=4 uid="uid://cktct5rrfahgf"]
 
 [ext_resource type="Texture2D" uid="uid://dgt40dtxpgr5e" path="res://Content/Assets/Tilesets/Ground/Water_tiles.png" id="1_1a67b"]
 [ext_resource type="Texture2D" uid="uid://d07w556hv5xob" path="res://Content/Assets/Tilesets/Ground/Floors_Tiles.png" id="2_nfp8y"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://c2my3n2b7kapy" path="res://Content/Scenes/TreeScenes/Ltree.tscn" id="32_6hc28"]
 [ext_resource type="PackedScene" uid="uid://beun0bt7362d5" path="res://Content/Scenes/OreScenes/ore1.tscn" id="35_4r5ad"]
 [ext_resource type="PackedScene" uid="uid://drnv4fqwtewp4" path="res://Content/Scenes/PickupScenes/rock.tscn" id="36_0sjab"]
+[ext_resource type="PackedScene" uid="uid://cmmwg30hiqqea" path="res://Content/Scenes/StickScenes/stick1.tscn" id="41_gtqpy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_011ga"]
 texture = ExtResource("1_1a67b")
@@ -3918,3 +3919,6 @@ tile_map_data = PackedByteArray("AADY/5T/AAACAAUAAADZ/5T/AAACAAUAAADX/5T/AAADAAY
 tile_set = SubResource("TileSet_588h7")
 
 [node name="HUD" parent="." instance=ExtResource("24_rb5wc")]
+
+[node name="stick" parent="." instance=ExtResource("41_gtqpy")]
+position = Vector2(-99, -24)

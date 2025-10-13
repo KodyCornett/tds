@@ -3,6 +3,8 @@ class_name Ore
 
 @export var health: float = 5.0
 @export var loot_table: Dictionary
+@export var item_id: String
+
 
 @onready var ore_sprite: Sprite2D = $OreSprite2D
 

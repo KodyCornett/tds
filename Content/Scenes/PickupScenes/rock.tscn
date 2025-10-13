@@ -10,9 +10,10 @@ region = Rect2(97, 145, 15, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_mq00y"]
 radius = 11.0
 
-[node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
+[node name="Flint" type="Area2D" groups=["harvestable_herbs"]]
 script = ExtResource("1_sprv2")
-herb_name = "Stick"
+herb_name = "Flint"
+item_id = "flint"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_1se2d")

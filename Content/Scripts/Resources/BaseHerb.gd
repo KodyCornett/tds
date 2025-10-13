@@ -1,8 +1,10 @@
+# BaseHerb.gd #
 extends Area2D
 class_name BaseHerb
 
 @export var herb_name: String = "herb"
 @export var harvest_amount: int = 1
+@export var item_id: String
 
 @onready var herb_sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -28,7 +30,13 @@ func collect() -> void:
 
 func harvest() -> void:
 	print("[BaseHerb] Collected:", herb_name, "| Amount:", harvest_amount)
-	Inventory.add_item(herb_name, harvest_amount)
+	if item_id != "":
+		Inventory.add_item(item_id, harvest_amount)
+	else:
+		push_warning("Item missing item_id for " + herb_name)
+
+	queue_free()
+	harvested = true
 
 	# Object disappears
 	queue_free()

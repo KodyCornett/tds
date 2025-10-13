@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1fru51pyjh7"]
+
+[ext_resource type="Script" uid="uid://di7dlc3ubo4ij" path="res://Content/Scenes/inv_slot.gd" id="1_c4at4"]
+[ext_resource type="Texture2D" uid="uid://djog228g885mx" path="res://Content/Assets/Inventory/SpriteSheet.png" id="1_prcyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4at4"]
+atlas = ExtResource("1_prcyl")
+region = Rect2(192, 2528, 32, 32)
+
+[node name="inv_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 31)
+offset_right = 32.0
+offset_bottom = 31.0
+script = ExtResource("1_c4at4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.96875)
+texture = SubResource("AtlasTexture_c4at4")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 31.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="item_count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 47.0
+scale = Vector2(0.395, 0.395)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
