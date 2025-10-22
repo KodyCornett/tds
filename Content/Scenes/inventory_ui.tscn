@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm4ygwhxcpom7"]
+[gd_scene load_steps=13 format=3 uid="uid://dm4ygwhxcpom7"]
 
 [ext_resource type="Texture2D" uid="uid://djog228g885mx" path="res://Content/Assets/Inventory/SpriteSheet.png" id="1_tudrd"]
 [ext_resource type="Script" uid="uid://boccscvhf72hj" path="res://Content/Scripts/inventory_ui.gd" id="1_vkh64"]
 [ext_resource type="PackedScene" uid="uid://d1fru51pyjh7" path="res://Content/Scenes/inv_slot.tscn" id="2_ffnsi"]
+[ext_resource type="PackedScene" uid="uid://gnk2ttmygud5" path="res://Content/Scenes/item_description_panel.tscn" id="3_sixdo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffnsi"]
 atlas = ExtResource("1_tudrd")
@@ -123,6 +124,14 @@ offset_right = 528.0
 offset_bottom = 70.0
 texture = SubResource("AtlasTexture_rh4yn")
 flip_h = true
+
+[node name="ItemDescriptionPanel" parent="." instance=ExtResource("3_sixdo")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 241.0
+offset_top = 245.0
+offset_right = 468.0
+offset_bottom = 295.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1fru51pyjh7"]
 
-[ext_resource type="Script" uid="uid://di7dlc3ubo4ij" path="res://Content/Scenes/inv_slot.gd" id="1_c4at4"]
+[ext_resource type="Script" uid="uid://di7dlc3ubo4ij" path="res://Content/Scripts/inv_slot.gd" id="1_c4at4"]
 [ext_resource type="Texture2D" uid="uid://djog228g885mx" path="res://Content/Assets/Inventory/SpriteSheet.png" id="1_prcyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4at4"]

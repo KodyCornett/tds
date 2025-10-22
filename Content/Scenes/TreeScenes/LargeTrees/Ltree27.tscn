@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjmjiexd1t5em"]
+
+[ext_resource type="Script" uid="uid://cpo6ril2fx1px" path="res://Content/Scripts/Resources/LargeTree.gd" id="1_qr466"]
+[ext_resource type="Texture2D" uid="uid://da7xkyr8qci3u" path="res://Content/Assets/Tilesets/Trees/Model_03/Size_05.png" id="2_h38ie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rgib"]
+atlas = ExtResource("2_h38ie")
+region = Rect2(0, 257, 128, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrev3"]
+atlas = ExtResource("2_h38ie")
+region = Rect2(257, 486, 127, 26)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrwvt"]
+radius = 4.0
+height = 50.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riw8o"]
+size = Vector2(9, 44)
+
+[node name="Tree" type="StaticBody2D" groups=["trees"]]
+collision_mask = 3
+script = ExtResource("1_qr466")
+
+[node name="TreeSprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -128)
+scale = Vector2(1.00206, 0.995817)
+texture = SubResource("AtlasTexture_6rgib")
+
+[node name="StumpSprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -13)
+texture = SubResource("AtlasTexture_mrev3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -25)
+shape = SubResource("CapsuleShape2D_yrwvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -22)
+shape = SubResource("RectangleShape2D_riw8o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

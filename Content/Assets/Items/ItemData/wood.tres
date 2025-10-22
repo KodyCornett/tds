@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://d4mh4r702ciih"]
+
+[ext_resource type="Texture2D" uid="uid://b8t3i0h0gwxf4" path="res://Content/Assets/Items/itemset0.png" id="1_en5kf"]
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="2_en5kf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05lno"]
+atlas = ExtResource("1_en5kf")
+region = Rect2(128, 96, 16, 16)
+
+[resource]
+script = ExtResource("2_en5kf")
+id = "Wood"
+display_name = "Wood"
+description = "A solid log, useful for building or fuel."
+icon = SubResource("AtlasTexture_05lno")
+max_stack = 10
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

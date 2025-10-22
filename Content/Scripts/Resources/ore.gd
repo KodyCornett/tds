@@ -2,21 +2,20 @@ extends StaticBody2D
 class_name Ore
 
 @export var health: float = 5.0
-@export var loot_table: Dictionary
-@export var item_id: String
-
+@export var harvest_amount: int = 1
+@export var item_id: String  # connects to ItemDatabase key, like "copper" or "stone"
 
 @onready var ore_sprite: Sprite2D = $OreSprite2D
 
 func _ready() -> void:
-	add_to_group("rocks")  # keep using the rocks group
-	print("[Ore] Ready:", name, "| Health:", health)
+	add_to_group("rocks")
+	print("[Ore] Ready:", name, "| Health:", health, "| Item:", item_id)
 
 func take_damage(amount: float) -> void:
 	health -= amount
 	print("[Ore] Hit! Damage:", amount, "| Health:", health)
 
-	# Flash effect for feedback
+	# Flash effect
 	if ore_sprite:
 		ore_sprite.modulate = Color(0.7, 0.7, 0.7)
 		await get_tree().create_timer(0.1).timeout
@@ -26,6 +25,12 @@ func take_damage(amount: float) -> void:
 		harvest()
 
 func harvest() -> void:
-	print("[Ore] Harvested! Loot:", loot_table)
-	# TODO: Add loot to inventory system
+	if not item_id in ItemDatabase.ITEMS:
+		push_warning("[Ore] Invalid item_id:", item_id)
+		queue_free()
+		return
+
+	var item_data = ItemDatabase.ITEMS[item_id]
+	print("[Ore] Harvested:", item_data.display_name, "| Amount:", harvest_amount)
+	Inventory.add_item(item_id, harvest_amount)
 	queue_free()
