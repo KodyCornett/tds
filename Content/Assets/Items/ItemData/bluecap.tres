@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://57pp7gso43q7"]
+
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="1_b771k"]
+[ext_resource type="Texture2D" uid="uid://oc3m0jsxba1d" path="res://Content/Assets/Tilesets/Ground/Vegetation.png" id="1_pfc1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfijo"]
+atlas = ExtResource("1_pfc1f")
+region = Rect2(17, 352, 15, 16)
+
+[resource]
+script = ExtResource("1_b771k")
+id = "Blue Cap"
+display_name = "Indigo Blue Cap"
+description = "a mushroom."
+icon = SubResource("AtlasTexture_tfijo")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

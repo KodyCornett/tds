@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://6tb25bdbakwt"]
+
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="1_nblnu"]
+[ext_resource type="Texture2D" uid="uid://oc3m0jsxba1d" path="res://Content/Assets/Tilesets/Ground/Vegetation.png" id="1_ryuqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4e24"]
+atlas = ExtResource("1_ryuqm")
+region = Rect2(64, 400, 16, 16)
+
+[resource]
+script = ExtResource("1_nblnu")
+id = "borage"
+display_name = "Borage"
+description = "cucumber-like flavor; used in refreshing tonics."
+icon = SubResource("AtlasTexture_t4e24")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

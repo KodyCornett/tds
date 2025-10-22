@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://nf65ebqcrfql"]
+
+[ext_resource type="Script" uid="uid://ckgexacl6fqwr" path="res://watersource.gd" id="1_s6m6w"]
+[ext_resource type="Texture2D" uid="uid://dgt40dtxpgr5e" path="res://Content/Assets/Tilesets/Ground/Water_tiles.png" id="2_2h0sa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv8xw"]
+atlas = ExtResource("2_2h0sa")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4iql"]
+size = Vector2(16, 16)
+
+[node name="Watersource" type="Node2D"]
+script = ExtResource("1_s6m6w")
+water_type = "dirty"
+efficiency = 0.1
+contamination_risk = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.49792, 0.997316, 0.643327, 1)
+texture = SubResource("AtlasTexture_gv8xw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v4iql")

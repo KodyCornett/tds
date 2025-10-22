@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://b1qq64pk23dhx"]
+
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="1_5jk0t"]
+[ext_resource type="Texture2D" uid="uid://b8t3i0h0gwxf4" path="res://Content/Assets/Items/itemset0.png" id="1_k34uh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc1rk"]
+atlas = ExtResource("1_k34uh")
+region = Rect2(129, 33, 15, 15)
+
+[resource]
+script = ExtResource("1_5jk0t")
+id = "Copper"
+display_name = "Copper"
+description = "A reddish metal used for simple tools and sturdy equipment."
+icon = SubResource("AtlasTexture_tc1rk")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"
