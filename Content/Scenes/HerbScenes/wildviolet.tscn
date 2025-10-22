@@ -12,8 +12,8 @@ size = Vector2(9, 29.5)
 
 [node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
 script = ExtResource("1_p3xpd")
-herb_name = "Cattail"
-item_id = "cattail"
+herb_name = "Wild Violet"
+item_id = "wildviolet"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_mgb60")

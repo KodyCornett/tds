@@ -12,8 +12,8 @@ radius = 5.02494
 
 [node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
 script = ExtResource("1_0sacj")
-herb_name = "Cattail"
-item_id = "cattail"
+herb_name = "Orange Cap"
+item_id = "orangecap"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_mgb60")

@@ -20,6 +20,12 @@ var ITEMS := {
 	"wildgarlic": preload("res://Content/Assets/Items/ItemData/wildgarlic.tres") as ItemData,
 	"cattail": preload("res://Content/Assets/Items/ItemData/cattail.tres") as ItemData,
 	"orangecap": preload("res://Content/Assets/Items/ItemData/orangecap.tres") as ItemData,
+	"chamomile": preload("res://Content/Assets/Items/ItemData/chamomile.tres") as ItemData,
+	"carrot": preload("res://Content/Assets/Items/ItemData/carrot.tres") as ItemData,
+	"broccoli": preload("res://Content/Assets/Items/ItemData/broccoli.tres") as ItemData,
+	"wildviolet": preload("res://Content/Assets/Items/ItemData/wildviolet.tres") as ItemData,
+	"lettuce": preload("res://Content/Assets/Items/ItemData/lettuce.tres") as ItemData,
+	
 	
 	
 	

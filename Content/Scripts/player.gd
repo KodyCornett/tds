@@ -174,10 +174,22 @@ func _play_idle_or_run() -> void:
 
 # Herb Collection #
 func try_collect() -> void:
-	if is_chopping or is_collecting or is_mining: return
+	if is_chopping or is_collecting or is_mining:
+		return
 
+	# --- Herbs ---
 	for herb in get_tree().get_nodes_in_group("harvestable_herbs"):
 		if herb.player_in_range:
 			is_collecting = true
 			anim.play("collect_%s" % facing)
+			return
+
+	# --- Water Sources ---
+	for water in get_tree().get_nodes_in_group("water_sources"):
+		if water.player_in_range:
+			is_collecting = true
+			anim.play("collect_%s" % facing)
+			await get_tree().create_timer(0.4).timeout  # optional small delay for realism
+			water.collect_water(self)
+			is_collecting = false
 			return

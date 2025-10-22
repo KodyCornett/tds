@@ -1,3 +1,4 @@
+## inventory_ui.gd
 extends Control
 
 @onready var description_panel = $ItemDescriptionPanel

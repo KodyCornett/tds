@@ -26,6 +26,8 @@ Inventory="*res://Content/Scripts/Singletons/Inventory.gd"
 trees=""
 harvestable_herbs="Herb Collection Group"
 rocks=""
+player=""
+water_sources=""
 
 [input]
 
