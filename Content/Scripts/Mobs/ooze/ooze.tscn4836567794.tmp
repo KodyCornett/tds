@@ -170,7 +170,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_14e73")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uow47")
 }],
-"loop": false,
+"loop": true,
 "name": &"death",
 "speed": 12.0
 }, {
@@ -245,7 +245,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x0j81")
 }],
-"loop": false,
+"loop": true,
 "name": &"move",
 "speed": 10.0
 }]
@@ -256,8 +256,6 @@ collision_mask = 3
 script = ExtResource("1_ori52")
 approach_speed = 80.0
 attack_range_radius = 28.0
-attack_duration = 1
-attack_cooldown = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_qf6qa")

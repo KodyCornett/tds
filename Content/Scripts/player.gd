@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var run_speed: float = 140.0
 @export var chop_cooldown: float = 0.3
 @export var mine_cooldown: float = 0.5   # seconds between swings
+@export var max_health := 100
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -15,6 +16,7 @@ var is_collecting: bool = false
 var chop_timer: float = 0.0
 var mine_timer: float = 0.0
 var hit_targets_this_swing: Array = []  # used for both chopping and mining
+var health := max_health
 
 const AXE_STAMINA_COST := 20.0
 const PICKAXE_STAMINA_COST := 20.0
@@ -197,3 +199,14 @@ func try_collect() -> void:
 			is_collecting = true
 			anim.play("collect_%s" % facing)
 			return
+
+
+func apply_damage(amount: int):
+	health -= amount
+	print("[Player] Took damage:", amount, "→ health:", health)
+	if health <= 0:
+		die()
+
+func die():
+	print("[Player] Died.")
+	queue_free()  # or trigger death animation, etc.

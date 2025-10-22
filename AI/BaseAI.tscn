@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfiqqfrml3fm8"]
+[gd_scene load_steps=9 format=3 uid="uid://dfiqqfrml3fm8"]
 
 [ext_resource type="Script" uid="uid://bvacdwkdct8yd" path="res://AI/BaseAI.gd" id="1_h71xj"]
 [ext_resource type="Script" uid="uid://dn8e38jcfoakw" path="res://Content/Scripts/fsm.gd" id="2_s8lw7"]
+[ext_resource type="Script" uid="uid://pxaq5csdayhy" path="res://AI/arbitrator.gd" id="3_tulbv"]
+[ext_resource type="Script" uid="uid://c7d8cn7yt81i5" path="res://AI/combat.gd" id="4_mmcqj"]
+[ext_resource type="Script" uid="uid://djo3yl62m3v4l" path="res://AI/emotion.gd" id="5_i28bb"]
+[ext_resource type="Script" uid="uid://7eq61ia1rvdk" path="res://AI/memory.gd" id="6_gr2wi"]
+[ext_resource type="Script" uid="uid://jf2e1affp6rh" path="res://AI/perception.gd" id="7_gan7c"]
+[ext_resource type="Script" uid="uid://c0u5n6x66n5gv" path="res://AI/planner.gd" id="8_txkqb"]
 
 [node name="BaseAI" type="CharacterBody2D"]
 script = ExtResource("1_h71xj")
@@ -14,3 +20,21 @@ script = ExtResource("1_h71xj")
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("2_s8lw7")
+
+[node name="Arbitrator" type="Node" parent="."]
+script = ExtResource("3_tulbv")
+
+[node name="Combat" type="Node" parent="."]
+script = ExtResource("4_mmcqj")
+
+[node name="Emotion" type="Node" parent="."]
+script = ExtResource("5_i28bb")
+
+[node name="Memory" type="Node" parent="."]
+script = ExtResource("6_gr2wi")
+
+[node name="Perception" type="Node" parent="."]
+script = ExtResource("7_gan7c")
+
+[node name="Planner" type="Node" parent="."]
+script = ExtResource("8_txkqb")
