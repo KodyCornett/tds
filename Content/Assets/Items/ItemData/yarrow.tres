@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dfelqrgbqdlpe"]
+
+[ext_resource type="Texture2D" uid="uid://b8t3i0h0gwxf4" path="res://Content/Assets/Items/itemset0.png" id="1_acsrr"]
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="2_acsrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pggr0"]
+atlas = ExtResource("1_acsrr")
+region = Rect2(224, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_acsrr")
+id = "yarrow"
+display_name = "Yarrow"
+description = "A common woodland herb used to brew mild healing tonics."
+icon = SubResource("AtlasTexture_pggr0")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

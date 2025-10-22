@@ -119,34 +119,27 @@ func start_mine() -> void:
 	$AttackArea.monitoring = true
 	
 func _on_attack_area_body_entered(body: Node) -> void:
-	print("[AttackArea] Detected body:", body, " Type:", typeof(body), " Class:", body.get_class())
-	if body is Tree:
-		print("[Tree-Detect] Found tree:", body)
-	elif body is Ore:
-		print("[Ore-Detect] Found ore:", body)
-
-	if not is_chopping and not is_mining:
+	if not (is_chopping or is_mining):
 		return
 
 	var node: Node = body
-	# climb up the parent chain until relevant node is found.
 	while node and not (node is Ore or node is BaseTree):
 		node = node.get_parent()
-
 	if node == null:
 		return
 
-	# --- Tree check ---
+	# --- Tree chopping ---
 	if is_chopping and node is BaseTree and node not in hit_targets_this_swing:
 		hit_targets_this_swing.append(node)
-		print("[Tree-Detect] Found tree:", node.name)
-		node.take_damage(5)  # Set Damage Value
+		node.take_damage(5)
+		print("[Tree-Detect] Hit tree:", node.name)
 
-	# --- Ore check ---
+	# --- Ore mining ---
 	elif is_mining and node is Ore and node not in hit_targets_this_swing:
 		hit_targets_this_swing.append(node)
-		print("[Ore-Detect] Found ore:", node.name)
-		node.take_damage(5)  # Set Damage Value 
+		node.take_damage(5)
+		print("[Ore-Detect] Hit ore:", node.name)
+
 
 # --- Anim finished ---
 func _on_animated_sprite_animation_finished() -> void:
@@ -156,26 +149,21 @@ func _on_animated_sprite_animation_finished() -> void:
 		is_mining = false
 		hit_targets_this_swing.clear()
 		$AttackArea.monitoring = false
-		print("[Player] Mine animation finished.")
 		_play_idle_or_run()
 
+	elif anim_name.begins_with("chop") and is_chopping:
+		is_chopping = false
+		hit_targets_this_swing.clear()
+		$AttackArea.monitoring = false
+		_play_idle_or_run()
 
 	elif anim_name.begins_with("collect") and is_collecting:
 		is_collecting = false
-
-	# collect the herb
-	for herb in get_tree().get_nodes_in_group("harvestable_herbs"):
-		if herb.player_in_range:
-			herb.collect()
-
-	_play_idle_or_run()
-
-	if anim_name.begins_with("chop") and is_chopping:
-		is_chopping = false
-		hit_targets_this_swing.clear()
-		$AttackArea.monitoring = false  # Disable attack detection
-		print("[Player] Chop animation finished.")
+		for herb in get_tree().get_nodes_in_group("harvestable_herbs"):
+			if herb.player_in_range:
+				herb.collect()
 		_play_idle_or_run()
+
 		
 func _play_idle_or_run() -> void:
 	if velocity.length() > 0.1:
@@ -186,10 +174,22 @@ func _play_idle_or_run() -> void:
 
 # Herb Collection #
 func try_collect() -> void:
-	if is_chopping or is_collecting or is_mining: return
+	if is_chopping or is_collecting or is_mining:
+		return
 
+	# --- Herbs ---
 	for herb in get_tree().get_nodes_in_group("harvestable_herbs"):
 		if herb.player_in_range:
 			is_collecting = true
 			anim.play("collect_%s" % facing)
+			return
+
+	# --- Water Sources ---
+	for water in get_tree().get_nodes_in_group("water_sources"):
+		if water.player_in_range:
+			is_collecting = true
+			anim.play("collect_%s" % facing)
+			await get_tree().create_timer(0.4).timeout  # optional small delay for realism
+			water.collect_water(self)
+			is_collecting = false
 			return
