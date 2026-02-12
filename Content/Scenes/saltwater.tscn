@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://otbdtnakoct4"]
+
+[ext_resource type="Script" uid="uid://ckgexacl6fqwr" path="res://watersource.gd" id="1_ra32l"]
+[ext_resource type="Texture2D" uid="uid://dgt40dtxpgr5e" path="res://Content/Assets/Tilesets/Ground/Water_tiles.png" id="2_6f56g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv8xw"]
+atlas = ExtResource("2_6f56g")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4iql"]
+size = Vector2(16, 16)
+
+[node name="Watersource" type="Node2D"]
+script = ExtResource("1_ra32l")
+water_type = "salt"
+efficiency = -0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.525422, 0.783198, 1, 1)
+texture = SubResource("AtlasTexture_gv8xw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v4iql")

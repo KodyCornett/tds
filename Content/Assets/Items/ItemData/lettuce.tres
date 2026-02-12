@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cgprn23d6xl2e"]
+
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="1_5rdfo"]
+[ext_resource type="Texture2D" uid="uid://dnif5q51nte30" path="res://Content/Assets/UnsortedGraphics/Farm.png" id="1_tpfgl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hucy"]
+atlas = ExtResource("1_tpfgl")
+region = Rect2(128, 81, 16, 14)
+
+[resource]
+script = ExtResource("1_5rdfo")
+id = "lettuce"
+display_name = "Lettuce"
+description = ""
+icon = SubResource("AtlasTexture_0hucy")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

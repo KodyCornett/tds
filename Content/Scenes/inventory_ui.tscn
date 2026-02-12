@@ -1,0 +1,216 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm4ygwhxcpom7"]
+
+[ext_resource type="Texture2D" uid="uid://djog228g885mx" path="res://Content/Assets/Inventory/SpriteSheet.png" id="1_tudrd"]
+[ext_resource type="Script" uid="uid://boccscvhf72hj" path="res://Content/Scripts/inventory_ui.gd" id="1_vkh64"]
+[ext_resource type="PackedScene" uid="uid://d1fru51pyjh7" path="res://Content/Scenes/inv_slot.tscn" id="2_ffnsi"]
+[ext_resource type="PackedScene" uid="uid://gnk2ttmygud5" path="res://Content/Scenes/item_description_panel.tscn" id="3_sixdo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffnsi"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(1557, 1994, 438, 332)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkh64"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(744, 2014, 299, 291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sixdo"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(1420, 2014, 92, 292)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq4dj"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(1002, 232, 167, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mr10"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(1093, 2027, 273, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpaih"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(2882, 2224, 77, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syiko"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(2770, 2221, 77, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh4yn"]
+atlas = ExtResource("1_tudrd")
+region = Rect2(128, 2528, 33, 17)
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 201.0
+offset_top = 74.0
+offset_right = 201.0
+offset_bottom = 74.0
+scale = Vector2(1.28, 1.28)
+script = ExtResource("1_vkh64")
+
+[node name="InvBG" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="TextureRect" parent="InvBG"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 607.0
+offset_bottom = 340.0
+texture = SubResource("AtlasTexture_ffnsi")
+
+[node name="Background" type="TextureRect" parent="InvBG"]
+layout_mode = 2
+offset_left = 170.0
+offset_top = 23.0
+offset_right = 575.0
+offset_bottom = 319.0
+texture = SubResource("AtlasTexture_vkh64")
+
+[node name="BG2" type="TextureRect" parent="InvBG"]
+layout_mode = 2
+offset_left = 33.0
+offset_top = 23.0
+offset_right = 170.0
+offset_bottom = 320.0
+texture = SubResource("AtlasTexture_sixdo")
+
+[node name="Title" type="TextureRect" parent="InvBG"]
+layout_mode = 2
+offset_left = 289.0
+offset_top = 34.0
+offset_right = 456.0
+offset_bottom = 76.0
+texture = SubResource("AtlasTexture_iq4dj")
+
+[node name="InnerTexture" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 181.0
+offset_top = 31.0
+offset_right = 565.0
+offset_bottom = 311.0
+texture = SubResource("AtlasTexture_5mr10")
+
+[node name="CompassBG" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 44.0
+offset_top = 210.0
+offset_right = 155.0
+offset_bottom = 317.0
+texture = SubResource("AtlasTexture_kpaih")
+
+[node name="CompassFace" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 44.0
+offset_top = 210.0
+offset_right = 155.0
+offset_bottom = 317.0
+texture = SubResource("AtlasTexture_syiko")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 38.0
+offset_right = 284.0
+offset_bottom = 69.0
+texture = SubResource("AtlasTexture_rh4yn")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 39.0
+offset_right = 528.0
+offset_bottom = 70.0
+texture = SubResource("AtlasTexture_rh4yn")
+flip_h = true
+
+[node name="ItemDescriptionPanel" parent="." instance=ExtResource("3_sixdo")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 241.0
+offset_top = 245.0
+offset_right = 468.0
+offset_bottom = 295.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 202.0
+offset_top = 106.0
+offset_right = 486.0
+offset_bottom = 207.0
+scale = Vector2(1.2, 1.2)
+columns = 8
+
+[node name="inv_slot1" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot2" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot3" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot4" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot5" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot6" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot7" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot8" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot9" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot10" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot11" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot12" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot13" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot14" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot15" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot16" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot17" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot18" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot19" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot20" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot21" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot22" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot23" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2
+
+[node name="inv_slot24" parent="GridContainer" instance=ExtResource("2_ffnsi")]
+layout_mode = 2

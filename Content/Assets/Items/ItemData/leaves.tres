@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dsysvn0ogg7n7"]
+
+[ext_resource type="Script" uid="uid://d1nnhuyg2xary" path="res://Content/Scripts/ItemData.gd" id="1_ce36g"]
+[ext_resource type="Texture2D" uid="uid://b8t3i0h0gwxf4" path="res://Content/Assets/Items/itemset0.png" id="1_pd63p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p3kw"]
+atlas = ExtResource("1_pd63p")
+region = Rect2(161, 0, 15, 16)
+
+[resource]
+script = ExtResource("1_ce36g")
+id = "leaves"
+display_name = "Leaves"
+description = "small plant material great for tinder."
+icon = SubResource("AtlasTexture_5p3kw")
+max_stack = 99
+metadata/_custom_type_script = "uid://d1nnhuyg2xary"

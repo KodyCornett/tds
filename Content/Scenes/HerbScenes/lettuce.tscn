@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca63s3d5kltbt"]
+
+[ext_resource type="Script" uid="uid://chxyo07usayv0" path="res://Content/Scripts/Resources/Mushroom.gd" id="1_mgyrw"]
+[ext_resource type="Texture2D" uid="uid://dnif5q51nte30" path="res://Content/Assets/UnsortedGraphics/Farm.png" id="2_u51n1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqy6y"]
+atlas = ExtResource("2_u51n1")
+region = Rect2(80, 83, 16, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq00y"]
+radius = 11.0
+
+[node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
+script = ExtResource("1_mgyrw")
+herb_name = "Lettuce"
+item_id = "lettuce"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_jqy6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_mq00y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

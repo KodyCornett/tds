@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf3r8yuuye1kq"]
+
+[ext_resource type="Script" uid="uid://chxyo07usayv0" path="res://Content/Scripts/Resources/Mushroom.gd" id="1_s3ilt"]
+[ext_resource type="Texture2D" uid="uid://cl5g5ov08c5jv" path="res://Content/Assets/Tilesets/Ground/Rocks.png" id="2_q6f4o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1se2d"]
+atlas = ExtResource("2_q6f4o")
+region = Rect2(144, 145, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq00y"]
+radius = 11.0
+
+[node name="Flint" type="Area2D" groups=["harvestable_herbs"]]
+script = ExtResource("1_s3ilt")
+herb_name = "Flint"
+item_id = "flint"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_1se2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_mq00y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

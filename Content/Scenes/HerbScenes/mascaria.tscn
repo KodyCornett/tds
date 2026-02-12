@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://te7vwy42e8r7"]
+
+[ext_resource type="Script" uid="uid://chxyo07usayv0" path="res://Content/Scripts/Resources/Mushroom.gd" id="1_7xh6i"]
+[ext_resource type="Texture2D" uid="uid://oc3m0jsxba1d" path="res://Content/Assets/Tilesets/Ground/Vegetation.png" id="2_7lty4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgb60"]
+atlas = ExtResource("2_7lty4")
+region = Rect2(0, 351, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq00y"]
+radius = 11.0
+
+[node name="Herb" type="Area2D" groups=["harvestable_herbs"]]
+script = ExtResource("1_7xh6i")
+herb_name = "Mascaria"
+item_id = "Mascaria"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_mgb60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_mq00y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

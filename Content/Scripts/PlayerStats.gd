@@ -24,6 +24,10 @@ func modify_stamina(amount: float) -> void:
 	if amount < 0:
 		stamina_spent_this_frame += -amount
 	emit_signal("stats_changed")
+	
+func modify_thirst(amount: float) -> void:
+	thirst = clamp(thirst + amount, 0, 100)
+	emit_signal("stats_changed")
 
 func _process(delta: float) -> void:
 	stamina_spent_this_frame = 0.0   # reset before frame
